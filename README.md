@@ -55,10 +55,8 @@ The API sends the UUID4 of the MineMeld installation and the running version of 
 
 **Support for CentOS 7 and RHEL 7 is still experimental**
 
-    $ sudo yum install -y wget git gcc python-devel libffi-devel openssl-devel
-    $ wget https://bootstrap.pypa.io/get-pip.py
-    $ sudo -H python get-pip.py
-    $ sudo -H pip install ansible
+    $ sudo yum install -y wget git gcc python-devel libffi-devel openssl-devel python34-pip ansible
+    $ sudo alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
     $ git clone https://github.com/PaloAltoNetworks/minemeld-ansible.git
     $ cd minemeld-ansible
     $ ansible-playbook -K -i 127.0.0.1, local.yml
